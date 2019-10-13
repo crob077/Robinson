@@ -1,158 +1,944 @@
 <!DOCTYPE html>
-<html>
-<!--  Copyright 2019 Alaress Pty Ltd, Schoolbox -->
-<!--  Visit us at www.schoolbox.com.au -->
-<head>
-<title>GrammarNet</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Language" content="en-au" />
-<meta name="author" content="Alaress Pty Ltd"/>
-<meta name="application-name" content="Auckland Grammar School" />
-<meta name="msapplication-TileColor" content="#0066b0" />
-<meta name="msapplication-square70x70logo" content="/images/logo.php?logo=skin_logo_square&size=tile70" />
-<meta name="msapplication-square150x150logo" content="/images/logo.php?logo=skin_logo_square&size=tile150" />
-<meta name="msapplication-wide310x150logo" content="/images/logo.php?logo=skin_logo_login&size=tile310" />
-<meta name="msapplication-square310x310logo" content="/images/logo.php?logo=skin_logo_large&size=tile310" />
-<meta name="viewport" content="initial-scale=1, maximum-scale=1">
-<link rel="apple-touch-icon" sizes="57x57" href="/images/logo.php?logo=skin_logo_square&size=apple57">
-<link rel="apple-touch-icon" sizes="60x60" href="/images/logo.php?logo=skin_logo_square&size=apple60">
-<link rel="apple-touch-icon" sizes="72x72" href="/images/logo.php?logo=skin_logo_square&size=apple72">
-<link rel="apple-touch-icon" sizes="76x76" href="/images/logo.php?logo=skin_logo_square&size=apple76">
-<link rel="apple-touch-icon" sizes="114x114" href="/images/logo.php?logo=skin_logo_square&size=apple114">
-<link rel="apple-touch-icon" sizes="120x120" href="/images/logo.php?logo=skin_logo_square&size=apple120">
-<link rel="apple-touch-icon" sizes="144x144" href="/images/logo.php?logo=skin_logo_square&size=apple144">
-<link rel="apple-touch-icon" sizes="152x152" href="/images/logo.php?logo=skin_logo_square&size=apple152">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/logo.php?logo=skin_logo_square&size=apple180">
-<link rel="Shortcut Icon" href="/images/logo.php?logo=skin_logo_square&size=favicon" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="/css/agsbot/chrome-foundation.css?v=19.0.9" />
-<style type="text/css">
-    body.login {
-        background-image: url(/storage/image.php?hash=5bba3883e36260f110c5fc72c488b340db88bfb6&amp;size=maxsize);
-    }
-</style>
-<script type="text/javascript" src="/javascript/components/schoolbox.min.js?v=19.0.9"></script>
-<script src="/javascript/shared/browser-redirect.js"></script>
-<script type="text/javascript">
-$(function() {
-    if (!Modernizr.touch) {
-        $('#username').focus();
-    }
-});
-</script>
-    <!-- Global Site Tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-97642429-1"></script>
 
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments)}
-        gtag('js', new Date());
 
-        // Set tracking ID and map custom dimensions
-        gtag('config', 'UA-97642429-1', {
-            'custom_map': {
-                'dimension1': 'site_school_code',
-                'dimension2': 'site_type',
-                'dimension6': 'site_version'
-            }
-        });
+Argentina:
+  - argob
+  - cifasis
+  - gcba
+  - inti-cmnb
+  - municipioriogrande
 
-        // Send custom dimension events
-        gtag('event', 'site_school_code_dimension', {'site_school_code': 'AGSBOT'});
-        gtag('event', 'site_type_dimension', {'site_type': 'prod'});
-        gtag('event', 'site_version_dimension', {'site_version': '19.0.9'});
+Australia:
+  - actesa
+  - actgov
+  - agnsw
+  - AtlasOfLivingAustralia
+  - atogov
+  - ausdto
+  - australianantarcticdatacentre
+  - AustralianAntarcticDivision
+  - bom-radar
+  - commerce-wa-ols
+  - city-of-melbourne
+  - data61
+  - datagovau
+  - dpipwe
+  - dssgovaus
+  - envris
+  - Fire-and-Rescue-NSW
+  - gccgisteam
+  - GeoscienceAustralia
+  - govau
+  - govcms
+  - gs-dawr
+  - Healthway
+  - hiscom
+  - innovationgovau
+  - IPAustralia
+  - Landgate
+  - mcma
+  - nla
+  - NSW-eTendering
+  - NSWPlanning
+  - NSWRFS
+  - dbca-wa
+  - qld-gov-au
+  - srnsw
+  - SSCwebdev
+  - SunshineCoastCouncil
+  - treasury-aus
+  - victoriangovernment
+  - dpc-sdp
+  - wamuseum
 
-    </script>
-    
-</head>
-<body class="login side">
-<div id="container">
-	<div id="content">
-		<form id="login" method="post" action="/login?page=%2Flogin%2F">
-            <input type="hidden" name="page" value="/login/" />
-            <div class="row collapse">
-                <div class="small-12 column">
-                    <div class="logo">
-                        <img src="/images/logo.php?logo=skin_logo_login&size=normal" alt="GrammarNet" />
-                    </div>
-                </div>
-                <div class="small-12 column">
-                    <p id="error-msg" class="alert-box alert"></p>
-                </div>
-                <div class="small-12 column">
-                    <input type="text" name="username" id="username" placeholder="Username" />
-                    <input type="password" name="password" id="password" placeholder="Password" />
-                </div>
-            </div>
-            <div class="row collapse">
-                
-                                <div class="small-12 column">
-                    <p><a href="https://password.ags.school.nz">Forgotten your password?</a></p>
-                </div>
-                
-                                <div class="small-12 column">
-                    <input id="rememberme" type="checkbox" name="rememberme" value="1" />
-                    <label for="rememberme">Remember me</label>
-                </div>
-                                <div class="small-12 column login-links">
-                    <input type="submit" name="Submit" value="Login" alt="Login" />
+Belgium:
+  - belgianpolice
+  - CIRB
+  - Fedict
+  - inbo
+  - onroerenderfgoed
+  - StadGent
 
-                    
-                    
-                                    </div>
-            </div>
-        </form>
-    </div>
-    <div id="footer">
-        <ul>
-            <li>2019 &copy; Copyright <a href="http://www.ags.school.nz">Auckland Grammar School</a></li>
-            <li><a href="/policy">Guidelines of Use and Privacy Policy</a></li>
-            <li><a href="http://www.schoolbox.com.au" title="Schoolbox, Virtual Learning Environment, Learning Management System, LMS">Schoolbox</a>
-                19.0.9</li>
-                    </ul>
-    </div>
-</div>
-<script type="text/javascript">
+Bolivia:
+  - adsib
+  - geobolivia
 
-    var l, fy;
+Brazil:
+  - bacendeinf
+  - camaradosdeputadosoficial
+  - cenima-ibama
+  - cislgov
+  - culturagovbr
+  - dadosgovbr
+  - dataprev
+  - fablablivresp
+  - fateczonaleste
+  - gabinetedigital
+  - govbr
+  - GovBrasil
+  - imagov
+  - InstitutoBenjaminConstant
+  - interlegis
+  - justicagovbr
+  - labhackercd
+  - lexml
+  - MP-ES
+  - MP-RJ
+  - pensandoodireito
+  - plonegovbr
+  - pr-snas
+  - prefeiturasp
+  - PROCERGS
+  - prodest
+  - secom-tocantins
+  - secultce
+  - tcers
+  - tisorocaba
+  - tre-pa
+  - wpgovbr
 
-    $(function () {
+Bulgaria:
+  - govbg
+  - governmentbg
 
-        l = $('#login');
+Canada:
+  - AAFC-MBB
+  - abgov
+  - bcdevexchange
+  - bac-lac
+  - BCGov
+  - canada-ca
+  - cds-snc
+  - CIHR
+  - cityofgreatersudbury
+  - cityofottawa
+  - cityofsurrey
+  - CityOfSarnia
+  - CityofToronto
+  - CityofEdmonton
+  - cityssm
+  - cngo
+  - communicationssecurityestablishment
+  - csbp-cpse
+  - CSPS-EFPC-DAAN
+  - ECCC-MSC
+  - electionsquebec
+  - esdc-devx
+  - esdc-edsc
+  - fgpv-vpgf
+  - gc-proto
+  - GCTC-NTGC
+  - gctools-outilsgc
+  - GeoCanViz
+  - GNWT
+  - infra-geo-ouverte
+  - LMID-DIMT
+  - MC-MBO-WebPublishingTeam
+  - MetPX
+  - MTS-STM
+  - nrc-cnrc
+  - NRCan
+  - nsgov
+  - ongov
+  - open-data
+  - phac-nml
+  - pspc-spac
+  - PSPC-SPAC-buyandsell
+  - RAMP-PCAR
+  - RDOQ
+  - ServiceCanada
+  - StatCan
+  - TBS-EACPD
+  - tc-ca
+  - thecityofcalgary
+  - veteransaffairscanada
+  - VilledeMontreal
+  - wet-boew
 
-        fy = $('#footer').height();
+Chile:
+  - e-gob
 
-        $(window).on('resize', function () {
-            l.css('top', Math.max(0, ($(window).height() - l.height() - fy) / 2));
-        }).trigger('resize');
+Colombia:
+  - AltaConsejeriaTIC
+  - evaluon
+  - idu-bogota
 
-        // Validation of terms and conditions
-        l.alaressValidate({
-            ignoreTitle: false,
-            errorPlacement: function(error, element) {
-                if (element.attr("name") == "tandc") {
-                    error.appendTo("#error-msg");
+Denmark:
+  - Kortforsyningen
+  - NationalMuseumofDenmark
+  - skat
+  - ssi-dk
+  - StatensMuseumforKunst
 
-                } else {
-                    error.appendTo(element);
-                }
-            }
-        });
-        // T&C: remove error message completely on check`
-        l.find('#tandc').on('change', function () {
-            if (this.checked) {
-                $('#error-msg').remove();
-            }
-        });
-    });
-</script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119146927-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+Ecuador:
+  - inamhi
+  - innovacionsnap
+  - senescyt
 
-  gtag('config', 'UA-119146927-1');
-</script>
-</body>
-</html>
+Egypt:
+  - informationtechnologyinstitute
+
+Estonia:
+  - e-gov
+  - kinnisvara
+  - MKM-ITAO
+  - open-eid
+  - opendata-ee
+  - vvk-ehk
+
+Ethiopia:
+  - ethiopian
+
+European Union:
+  - europeana
+
+Finland:
+  - 6Aika
+  - City-of-Helsinki
+  - City-of-Turku
+  - CSC-IT-Center-for-Science
+  - Digipalvelutehdas
+  - finnishtransportagency
+  - Helsingin-kaupungin-tietokeskus
+  - helsinki-city-library
+  - HSLdevcom
+  - Lounaispaikka
+  - lukefi
+  - NatLibFi
+  - nlsfi
+  - opetushallitus
+  - vrk-kpa
+
+France:
+  - afimb
+  - AlsaceDigitale
+  - AmbaNum
+  - ANSSI-FR
+  - ApieFrance
+  - betagouv
+  - cea-hpc
+  - cea-leti
+  - cea-list
+  - cea-sec
+  - clipos
+  - clipos-archive
+  - cw-leia
+  - communaute-cimi
+  - culturecommunication
+  - DGFiP
+  - diplomatiegouvfr
+  - disic
+  - DREAL-NA
+  - entrepreneur-interet-general
+  - erasme
+  - etalab
+  - Inist-CNRS
+  - InseeFr
+  - SocieteNumerique
+  - lutece-secteur-public
+  - MINAGRI-INITIAL
+  - MTES-MCT
+  - MinistereSupRecherche
+  - nanterre
+  - nantesmetropole
+  - opencti-platform
+  - PnCevennes
+  - PnEcrins
+  - PnX-SI
+  - polewebmaedi
+  - ProgrammeVitam
+  - region-bretagne
+  - sgmap-agd
+  - SocialGouv
+  - strasbourg
+  - wookey-project
+  - BRGM
+
+French Polynesia:
+  - sipf
+
+Germany:
+  - buehl
+  - gbv
+  - hbz
+  - isyfact
+  - lobid
+
+Guatemala:
+  - minfingt
+
+Hong Kong:
+  - datagovhk
+
+India:
+  - itschool
+
+International:
+  - EL-BID
+  - IATI
+  - ogpl
+
+Isle of Man:
+  - Isle-Of-Man-Government
+
+Israel:
+  - Digital-Israel
+
+Italy:
+  - AgID
+  - ComuneBologna
+  - Formez
+  - PloneGov-IT
+  - RegioneER
+  - TeamDigitale
+
+Japan:
+  - city-of-kobe
+  - codefornamie
+  - gsi-cyberjapan
+  - nhohq
+  - nims-dpfc
+  - wakayama-pref-org
+
+Jersey:
+  - statesofjersey
+
+Kosovo:
+  - map-ashi
+
+Latvia:
+  - CSBLatvia
+
+Lithuania:
+  - viesujupirkimutarnyba
+  - vilnius
+
+Luxemburg:
+  - Geoportail-Luxembourg
+  - opendatalu
+
+Malaysia:
+  - pmo2
+
+Mauritius:
+  - MUnosecc
+
+Mexico:
+  - CSB-IG
+  - DDT-INMEGEN
+  - inmegen
+  - mxabierto
+  - profeco
+  - redoaxacadetodos
+
+New Zealand:
+  - CanterburyRegionalCouncil
+  - data-govt-nz
+  - DigitalNZ
+  - ElectricityAuthority
+  - GOVTNZ
+  - linz
+  - localgovernment
+  - MfE-NZ
+  - nz-mbie
+  - nz-social-investment-agency
+  - opcnz
+  - R9BetterAPIs
+  - te-papa
+
+Norway:
+  - altinn
+  - bergenkommune
+  - brreg
+  - difi
+  - digibib
+  - dsb-norge
+  - dss-web
+  - fylkesmannen
+  - kartverket
+  - knreise
+  - KRD-KOMM-VL
+  - metno
+  - nasjonalmuseet
+  - navikt
+  - nlbdev
+  - Riksrevisjonen
+  - Rogaland
+  - rutebanken
+  - ruterno
+  - Skatteetaten
+  - StatensPensjonskasse
+  - telemark
+  - telemark-arkiv
+  - uninett
+  - vegvesen
+  - vest-agder
+
+Panama:
+  - IFARHU
+  - miambiente
+
+Paraguay:
+  - mecpy
+  - SENATICS
+
+Peru:
+  - imarpe
+
+Philippines:
+  - govph
+  - igovphil
+
+Poland:
+  - coi-gov-pl
+  - Ministerstwo-Cyfryzacji
+  - nationalmuseum
+
+Portugal:
+  - amagovpt
+
+Republic of Korea:
+  - molit-korea
+
+Romania:
+  - gov-ithub
+  - govro
+  - MinistryOfLabor
+
+Saudi Arabia:
+  - SAS-NCDC
+
+Singapore:
+  - govtechsg
+  - moexmen
+
+South Africa:
+  - eddZA
+
+Spain:
+  - AjMalgrat
+  - AjuntamentdeBarcelona
+  - AjuntamentdeCalafell
+  - AjuntamentdeCastello
+  - AjuntamentDeGava
+  - AjuntamentDeMataro
+  - AjuntamentdeReus
+  - AjuntamentdeSabadell
+  - AjuntamentdeSantCugat
+  - AjuntamentdeTerrassa
+  - AyuntamientoMadrid
+  - castilla-lamancha
+  - ctt-gob-es
+  - diputacioBCN
+  - ErabakiPamplona
+  - gencat
+  - GobiernoLaRioja
+  - HospitaletDeLlobregat
+  - icane
+  - projectestac
+  - vilanovailageltru
+
+Sweden:
+  - arbetsformedlingen
+  - domstol
+  - dotse
+  - elegnamnden
+  - Forsakringskassan
+  - gbif-sweden
+  - Helsingborg
+  - helsingborg-stad
+  - ISOF-ITD
+  - jobtechswe
+  - kungbib
+  - Lantmateriet
+  - libris
+  - lldd
+  - lshSWE
+  - malmostad
+  - mtmse
+  - NationalmuseumSWE
+  - NordicMuseum
+  - regionhalland
+  - regionostergotland
+  - riksantikvarieambetet
+  - riksarkivet
+  - rinfo
+  - RISE-SICS
+  - sambruk
+  - SciLifeLab
+  - skolverket
+  - smhi
+  - SodertornHB
+  - statens-maritima-museer
+  - Statenspersonadressregister
+  - Sundsvallskommun
+  - sverigesradio
+  - SVT
+  - swedish-council-for-higher-education
+  - swedishpensionsagency
+  - The-Municipality-of-Staffanstorp
+  - umea-kommun
+  - Vastra-Gotalandsregionen
+  - vasttrafik
+
+Switzerland:
+  - alv-ch
+  - alv-ch-ansible-roles
+  - BFS-SHS-MSAS
+  - dsi-vd
+  - FNSKtZH
+  - gisktzh
+  - kanton-bern
+  - ogdch
+  - sitn
+
+The Netherlands:
+  - Amsterdam
+  - dataoverheid
+  - GemeenteEde
+  - gemeentemuseum
+  - Geonovum
+  - Haarlem
+  - IenS-Velsen
+  - MinBZK
+  - MinELenI
+  - Pleio
+  - provinciegroningen
+  - provincieNH
+  - rijksoverheid
+  - StichtingHergebruikOverheid
+  - TweedeKamer
+  - zaanstad
+
+U.K. Central:
+  - alphagov
+  - BEACmodel
+  - britishlibrary
+  - cabinetoffice
+  - CJSCommonPlatform
+  - communitiesuk
+  - companieshouse
+  - datagovuk
+  - datasciencecampus
+  - decc
+  - defra
+  - DFE-Digital
+  - dfid
+  - digital-preservation
+  - directgov-innovate
+  - dstl
+  - dvla
+  - dvsa
+  - dwp
+  - GCHQ
+  - gds-dead
+  - gds-operations
+  - guidance-guarantee-programme
+  - hmcts
+  - hmrc
+  - informatics-lab
+  - insolvencyservice
+  - intellectual-property-office
+  - IQuOD
+  - jncc
+  - JNCC-UK
+  - jules-lsm
+  - LandRegistry
+  - landregistry-ops
+  - lgss
+  - LocalGovDigital
+  - MetOffice
+  - MetOfficeSpaceApps
+  - metomi
+  - ministryofjustice
+  - moj-analytical-services
+  - naouk
+  - nationalarchives
+  - NationalCrimeAgency
+  - nhsuk
+  - OfqualGovUK
+  - ONSdigital
+  - openglasgow
+  - openregister
+  - osgeouk
+  - scottishgovernment
+  - SkillsFundingAgency
+  - ukforeignoffice
+  - ukgovdatascience
+  - UKGovernmentBEIS
+  - UKHomeOffice
+  - UKLocation
+  - ukncsc
+  - ukwa
+
+U.K. Councils:
+  - BarnsleyCouncil
+  - BathnesDevelopment
+  - BracknellForestCouncil
+  - brighton-hove-gov-uk
+  - BristolCityCouncil
+  - CamdenCouncil
+  - cityofyork
+  - devoncc
+  - DevonCountyCouncil
+  - DundeeCityCouncil
+  - east-sussex-county-council
+  - edinburghcouncil
+  - gmfrs
+  - GuildfordBC
+  - HfdsCouncil
+  - kentcc
+  - LambethCouncil
+  - lichfield-district-council
+  - LondonBoroughSutton
+  - LutonCouncil
+  - RotherDC
+  - RoyalBoroughKingston
+  - surreydigitalservices
+  - thehighlandcouncil
+  - TraffordCouncil
+  - warwickshire
+  - wealden
+  - west-berkshire-council
+  - wmfs
+
+United Nations:
+  - UNGlobalPlatform
+
+U.S. City:
+  - austincodeit
+  - Baltimore-City-EGIS
+  - berkeleypubliclibrary
+  - BostonRedevelop
+  - cambridgedata
+  - cambridgegis
+  - chicago
+  - city-of-bellingham
+  - city-of-bloomington
+  - cityofasheville
+  - CityOfAuburnAL
+  - cityofaustin
+  - cityofboise
+  - CityOfBoston
+  - cityofboulder
+  - cityofburlington
+  - cityofchattanooga
+  - cityoffortworth
+  - CityOfGreeleyCo
+  - CityOfLosAngeles
+  - cityofnewyork
+  - CityOfPhiladelphia
+  - CityofPittsburgh
+  - cityofportland
+  - CityofReno
+  - CityofSanFrancisco
+  - CityofSantaMonica
+  - cityofsomerville
+  - cityofvernonia
+  - CityOfVirginiaBeach
+  - cityofwestsacramento
+  - CityofYakima
+  - cno-opa
+  - CORaleigh
+  - CUMTD
+  - DCCouncil
+  - DCgov
+  - DenverDev
+  - digitalinclusion
+  - egovpdx
+  - Honolulu
+  - kcmo
+  - lfucg
+  - longbeachinnovationteam
+  - LouisvilleMetro
+  - mnhrc
+  - moda-nyc  
+  - monum
+  - NYCComptroller
+  - nycdot
+  - NYCPlanning
+  - OpenGovDC
+  - p2g
+  - pdxgis
+  - PierceCountyWA
+  - ProBonoDC
+  - ridertd
+  - SantaClarita
+  - sfbart
+  - SiloamSprings
+  - southbendin
+  - TownOfBrookline
+  - tucsonaz
+
+U.S. County:
+  - anoka-script-team
+  - ArlingtonCounty
+  - baltimorecounty
+  - bouldercounty
+  - CanyonCounty
+  - CarverCounty
+  - donaanacounty
+  - fairfieldcountyit
+  - fpdcc
+  - HarrisCountyFOA
+  - HennepinCountyPublicDefender
+  - MCLD
+  - miamidade
+  - pottcountyit
+  - pwcgov
+  - saccounty
+  - sfcta
+  - SJCGIS
+  - slo-county-planning-and-building
+  - slugis
+
+U.S. Federal:
+  - 18f
+  - adl-aicc
+  - adlnet
+  - afrl
+  - arcticlcc
+  - BBGInnovate
+  - bfelob
+  - blue-button
+  - businessusa
+  - CA-CST-Library
+  - CA-CST-SII
+  - ccmc
+  - CDCgov
+  - cfpb
+  - cisagov
+  - cmsgov
+  - commercedataservice
+  - commercegov
+  - defense-cyber-crime-center
+  - demand-driven-open-data
+  - department-of-veterans-affairs
+  - deptofdefense
+  - didsr
+  - digital-analytics-program
+  - doecode
+  - EEOC
+  - energyapps
+  - erdc-cm
+  - eregs
+  - fcc
+  - fda
+  - fecgov
+  - Federal-Aviation-Administration
+  - federaltradecommission
+  - fedspendingtransparency
+  - GIST-ORNL
+  - globegit
+  - gopleader
+  - government-services
+  - gsa
+  - gsa-oes
+  - hhs
+  - HHS-AHRQ
+  - HHSDigitalMediaAPIPlatform
+  - HHSIDEAlab
+  - historyatstate
+  - IIP-Design
+  - IMDProjects
+  - imls
+  - informaticslab
+  - Innovation-Toolkit
+  - internationaltradeadministration
+  - ioos
+  - IRSgov
+  - keplergo
+  - libraryofcongress
+  - M-O-S-E-S
+  - mcc-gov
+  - missioncommand
+  - nasa
+  - nasa-develop
+  - nasa-gibs
+  - NASA-rdt
+  - nasa-tournament-lab
+  - nasaworldwind
+  - NationalGuard
+  - nationalparkservice
+  - NCRN
+  - NeoGeographyToolkit
+  - nesii
+  - ngds
+  - nhanes
+  - nidcd
+  - NIEM
+  - NMB-Dev
+  - NMML
+  - noaa-gfdl
+  - NOAA-ORR-ERD
+  - ntia
+  - ombegov
+  - Open-Sat
+  - opengovplatform
+  - ozoneplatform
+  - peacecorps
+  - petsc
+  - presidential-innovation-fellows
+  - project-open-data
+  - radiofreeasia
+  - redhawksdr
+  - regulationsgov
+  - sbstusa
+  - SelectUSA
+  - SERVIR
+  - SSAgov
+  - state-hiu
+  - sunpy
+  - us-bea
+  - US-CBP
+  - usagov
+  - usaid
+  - usajobs
+  - usasearch
+  - usbr
+  - uscensusbureau
+  - uscis
+  - usda
+  - usda-ars-agil
+  - USDA-ERS
+  - USDA-FSA
+  - usda-vs
+  - usdepartmentoflabor
+  - USDeptVeteransAffairs
+  - usdoj
+  - usds
+  - usdot-fhwa-stol
+  - usdot-jpo-ode
+  - useda
+  - usepa
+  - USFWS
+  - usg-scope
+  - USGCRP
+  - usgpo
+  - usgs
+  - USGS-Astrogeology
+  - USGS-CIDA
+  - usgs-cmg
+  - usgs-eros
+  - USGS-OWI
+  - USGS-R
+  - USGS-WiM
+  - usindianaffairs
+  - usinterior
+  - usnationalarchives
+  - USPS
+  - USPTO
+  - USSBA
+  - usstatedept
+  - ustaxcourt
+  - VHAINNOVATIONS
+  - virtual-world-framework
+  - visionworkbench
+  - WFMRDA
+  - whitehouse
+  - XDgov
+
+U.S. Military and Intelligence:
+  - afseo
+  - erdc-itl
+  - iadgov
+  - info-sharing-environment
+  - NationalSecurityAgency
+  - ngageoint
+  - nsacyber
+  - project-interoperability
+  - psns-imf
+  - screamlab
+  - shareandprotect
+  - SIMP
+  - usarmyresearchlab
+  - USNavalResearchLaboratory
+
+U.S. Special District:
+  - atlregional
+  - AZMAG
+  - baaqmd
+  - cleveland-metroparks
+  - CMAP-REPOS
+  - commonwealth-of-puerto-rico
+  - MetropolitanCouncil
+  - portofsandiego
+  - psrc
+
+U.S. States:
+  - agrc
+  - agrc-widgets
+  - AlaskaDHSS
+  - azgs
+  - calsimcallite
+  - ccap
+  - coloradodemography
+  - CTOpenData
+  - DCGovWeb
+  - eHawaii
+  - FGS-FloridaGeologicalSurvey
+  - gocodecolorado
+  - IDAHO-DOC-NCOMS
+  - idahofishgame
+  - investmentboard
+  - LADCO
+  - LibraryofVA
+  - massgov
+  - MFWP-GIS
+  - mn-script-team
+  - nebraskamap
+  - nelegislature
+  - NJOGIS
+  - njstatelibrary
+  - ny
+  - nys-its
+  - nysenate
+  - oimt
+  - okcareertech
+  - oregonopendata
+  - ORMetro
+  - scgeology
+  - SLNC-DIMP
+  - State-of-Arizona
+  - tndidd
+  - TNRIS
+  - twdb
+  - TxDOT
+  - UtahForestryFireStateLands
+  - VDEQ
+  - VDGIF
+  - Virginia-Department-of-Health
+  - Virginia-House-of-Delegates
+  - vtrans
+  - vtrans-rail
+  - wsdot
+  - WSDOT-GIS
+
+U.S. Tribal Nations:
+  - coquille-indian-tribe
+  - osage-nation
+
+U.S. Local Law Enforcement:
+  - SanDiegoCountySheriff
+
+Ukraine:
+  - openprocurement
+
+Uruguay:
+  - gubuy
+
+Venezuela:
+  - CanaimaGNULinux
+  - suscerte
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
